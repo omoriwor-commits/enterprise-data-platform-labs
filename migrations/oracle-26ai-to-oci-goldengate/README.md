@@ -11,14 +11,14 @@ This is a separate project from the [Oracle 19c to 26ai migration on Oracle Linu
 | Component | Source | Target |
 |---|---|---|
 | Platform | Local lab server | Oracle Cloud Infrastructure |
-| Operating system | Oracle Linux 9.8 | To confirm from deployment records |
+| Operating system | Oracle Linux 9.8 | Oracle Linux 9.8 (project owner confirmation) |
 | Oracle database | Oracle AI Database 26ai | Oracle AI Database 26ai |
 | Replication technology | Oracle GoldenGate 26ai | Oracle GoldenGate 26ai |
 | Initial data movement | Oracle RMAN and Data Pump | Oracle RMAN and Data Pump |
-| Hosting model | Local / self-managed | **To confirm: OCI Base Database Service or OCI Compute** |
+| Hosting model | Local / self-managed | **OCI Compute VM, self-managed Oracle 26ai** |
 | Database identifiers | To document | To document |
 
-The OCI target's exact resource type, database service, GoldenGate process layout, IP/VCN configuration and executed steps will be added after checking the implementation records. The title and scope deliberately do not claim an OCI Base Database Service target or a Compute VM without confirmation.
+The OCI target was an **OCI Compute virtual machine with Oracle AI Database 26ai installed and administered directly**, not OCI Base Database Service. Exact VM shape, database identifiers, network topology, GoldenGate process layout and executed commands should be documented from implementation records.
 
 ## Architecture record
 
@@ -29,7 +29,8 @@ Local Oracle 26ai / Oracle Linux 9.8
                  |
        Secure connectivity to OCI
                  |
-OCI Oracle 26ai target (hosting type to confirm)
+OCI Compute VM / Oracle Linux 9.8
+Self-managed Oracle AI Database 26ai
 ~~~
 
 ## Initial load and ongoing replication
@@ -38,8 +39,8 @@ The project owner confirms the use of **Oracle RMAN and Oracle Data Pump for ini
 
 ## Implementation evidence to add
 
-- Source and target CDB/PDB details, service names and release identifiers.
-- OCI compartment, VCN, subnet, route, security and connectivity design (sanitized).
+- Source and target CDB/PDB details, service names, software installation/patch level and release identifiers.
+- OCI Compute VM shape, image, block/boot volumes, compartment, VCN, subnet, routes, security and connectivity design (sanitized).
 - GoldenGate deployment and exact Extract/Distribution/Receiver/Replicat topology.
 - Applied configuration with secret-free command and parameter examples from the actual environment.
 - RMAN commands, backup/restore validation and recovery results as applicable.
