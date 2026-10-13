@@ -24,19 +24,21 @@ The OCI target was an **OCI Compute virtual machine with Oracle AI Database 26ai
 ## Architecture record
 
 ~~~text
-Local Oracle 26ai / Oracle Linux 9.8
-                 |
-         Oracle GoldenGate 26ai
-                 |
-       Secure connectivity to OCI
-                 |
-OCI Compute VM / Oracle Linux 9.8
-Self-managed Oracle AI Database 26ai
+LOCAL LAB / ORACLE LINUX 9.8                 OCI COMPUTE / ORACLE LINUX 9.8
++----------------------------------+        +----------------------------------+
+| Source Oracle AI Database 26ai   |        | Target Oracle AI Database 26ai   |
+|                                  |        | Self-managed database on OCI VM   |
+| GoldenGate 26ai source-side hub  |        |                                  |
+|  Extract: LOCAL capture          |        | Target reached by REMOTE apply   |
+|  Trail / CDC change stream       |------->| over approved private network    |
+|  Replicat: REMOTE target apply   |        |                                  |
++----------------------------------+        +----------------------------------+
+           Initial load: RMAN / Data Pump (separate from CDC)
 ~~~
 
 ## GoldenGate deployment methodology
 
-For this local Oracle 26ai → OCI migration, I used **local capture with GoldenGate running on the source-side hub**, followed by **remote apply to the self-managed Oracle 26ai database on OCI Compute**. RMAN and Data Pump supplied the initial load; GoldenGate maintained CDC after the baseline. Capture and apply describe database connectivity relative to the GoldenGate processes, not whether the databases share an OS host.
+For this local Oracle 26ai → OCI migration, I used **local capture at the source-side GoldenGate tier**, followed by **remote apply to the self-managed Oracle 26ai database on OCI Compute**. RMAN and Data Pump supplied the initial load; GoldenGate maintained CDC after the baseline. Capture and apply describe database connectivity relative to the GoldenGate processes, not whether the databases share an OS host.
 
 On the rerun, I will record the exact Extract mode, GoldenGate hub hostname, transport path, target Replicat deployment and SCN/CSN instantiation boundaries.
 
