@@ -6,7 +6,7 @@ The repository is organized around practical migration, modernization, high-avai
 
 ## Current Lab Portfolio
 
-### Oracle 19c to Oracle AI Database 26ai Migration
+### Oracle 19c to Oracle AI Database 26ai Migration — remote capture / local apply
 
 [Open the migration lab](migrations/oracle-19c-to-26ai-goldengate/README.md)
 
@@ -15,19 +15,30 @@ Current design:
 ```text
 Oracle Database 19c / Oracle Linux 7.9
         |
-        | Remote Integrated Extract
+        | Oracle Net: REMOTE Integrated Extract EXT19C
         v
-Oracle GoldenGate 26ai
-        |
-        | Trail
-        v
-Integrated Replicat
-        |
+GoldenGate 26ai on OL9.8 TARGET host
+        | Integrated Replicat REP26AI: LOCAL apply
         v
 Oracle AI Database 26ai / Oracle Linux 9.8
 ```
 
 The migration design keeps the existing Oracle 19c Data Guard environment in place while GoldenGate provides continuous change capture toward the 26ai target.
+
+### Oracle AI Database 26ai to OCI Compute — local capture / remote apply
+
+[Open the OCI migration](migrations/oracle-26ai-to-oci-goldengate/README.md)
+
+```text
+LOCAL / OL9.8                                 OCI COMPUTE / OL9.8
+Oracle AI Database 26ai                       Oracle AI Database 26ai
+GoldenGate source-side tier                   (self-managed target)
+   Extract: LOCAL capture                         ^
+   Replicat: REMOTE apply ------------------------+
+Initial load: RMAN + Data Pump; CDC: GoldenGate 26ai
+```
+
+The [OCI-to-Azure SQL Server 2022 project](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab) is a separate hub-based **remote capture / remote apply** implementation.
 
 ## Focus Areas
 
@@ -76,8 +87,11 @@ enterprise-data-platform-labs/
 ├── README.md
 └── migrations/
     ├── README.md
-    └── oracle-19c-to-26ai-goldengate/
-        └── README.md
+    ├── oracle-19c-to-26ai-goldengate/
+    │   └── README.md
+    └── oracle-26ai-to-oci-goldengate/
+        ├── README.md
+        └── RERUN-PLAYBOOK.md
 ```
 
 The structure will expand only as new labs are actually added. This avoids empty placeholder directories and keeps the repository aligned with completed or active work.
