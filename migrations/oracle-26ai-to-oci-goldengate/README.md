@@ -19,7 +19,7 @@ This is a separate project from the [Oracle 19c to 26ai migration on Oracle Linu
 | Initial data movement | Oracle RMAN and Data Pump | Oracle RMAN and Data Pump |
 | Hosting model | Local / self-managed | **OCI Compute VM, self-managed Oracle 26ai** |
 
-The OCI target was an **OCI Compute virtual machine with Oracle AI Database 26ai installed and administered directly**, not OCI Base Database Service. Exact VM shape, database identifiers, network topology, GoldenGate process layout and executed commands should be documented from implementation records.
+The OCI target was an **OCI Compute virtual machine with Oracle AI Database 26ai installed and administered directly**, not OCI Base Database Service.
 
 ## Architecture record
 
