@@ -34,7 +34,7 @@ OCI Oracle 26ai target (hosting type to confirm)
 
 ## Initial load and ongoing replication
 
-The migration used **Oracle RMAN and Oracle Data Pump for initial data loading**, with **Oracle GoldenGate 26ai** as the replication technology. The precise division of work between RMAN and Data Pump, the migration sequence, any backup/restore or export/import parameters, and the SCN/CSN handoff will be documented from the executed commands and logs. Their use is confirmed by the project owner; exact procedures and results are not reconstructed here.
+The project owner confirms the use of **Oracle RMAN and Oracle Data Pump for initial data loading**, followed by **Oracle GoldenGate 26ai for ongoing change data capture (CDC)**. Replication testing included INSERT, UPDATE, DELETE, and DROP operations. **DROP is DDL**, unlike the three DML operations; its successful replication depends on explicit DDL capture/apply support and configuration. The precise division of work between RMAN and Data Pump, the migration sequence, any backup/restore or export/import parameters, and the SCN/CSN handoff will be documented from the executed commands and logs. Their use is confirmed by the project owner; exact procedures and results are not reconstructed here.
 
 ## Implementation evidence to add
 
@@ -45,7 +45,8 @@ The migration used **Oracle RMAN and Oracle Data Pump for initial data loading**
 - RMAN commands, backup/restore validation and recovery results as applicable.
 - Data Pump export/import commands, job logs, object counts and validation as applicable.
 - Baseline instantiation and SCN/CSN coordination with GoldenGate.
-- Committed INSERT, UPDATE and DELETE results on source and target.
+- Committed INSERT, UPDATE and DELETE evidence on source and target.
+- DROP statement, affected object type, GoldenGate DDL capture/apply settings, and target-side result, to document DDL replication separately.
 - Trail/replication checkpoints, lag, restarts, error handling and recovery validation.
 - Cutover decision, downtime observations and rollback plan.
 
