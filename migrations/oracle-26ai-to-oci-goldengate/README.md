@@ -34,6 +34,12 @@ OCI Compute VM / Oracle Linux 9.8
 Self-managed Oracle AI Database 26ai
 ~~~
 
+## GoldenGate deployment methodology
+
+For this local Oracle 26ai → OCI migration, I used **local capture with GoldenGate running on the source-side hub**, followed by **remote apply to the self-managed Oracle 26ai database on OCI Compute**. RMAN and Data Pump supplied the initial load; GoldenGate maintained CDC after the baseline. Capture and apply describe database connectivity relative to the GoldenGate processes, not whether the databases share an OS host.
+
+On the rerun, I will record the exact Extract mode, GoldenGate hub hostname, transport path, target Replicat deployment and SCN/CSN instantiation boundaries.
+
 ## Initial load and ongoing replication
 
 I used **Oracle RMAN and Data Pump for initial data loading**, followed by **GoldenGate 26ai for ongoing CDC**. I tested INSERT, UPDATE, DELETE and DROP operations. The rerun playbook records the validation sequence and the commands and outputs to capture on the next execution.
