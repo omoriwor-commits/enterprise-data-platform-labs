@@ -2,6 +2,8 @@
 
 **Project:** Oracle AI Database 26ai migration from a local Oracle Linux 9.8 lab environment to Oracle Cloud Infrastructure.
 
+[**Repeat the implementation: RMAN, Data Pump and GoldenGate rerun playbook**](RERUN-PLAYBOOK.md)
+
 ## Project distinction
 
 This is a separate project from the [Oracle 19c to 26ai migration on Oracle Linux 7.9 → 9.8](../oracle-19c-to-26ai-goldengate/README.md). The first project combines database modernization and operating-system platform migration. This project concerns **moving an Oracle 26ai workload to OCI** with GoldenGate 26ai.
