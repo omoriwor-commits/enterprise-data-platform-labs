@@ -13,12 +13,11 @@ This is a separate project from the [Oracle 19c to 26ai migration on Oracle Linu
 | Component | Source | Target |
 |---|---|---|
 | Platform | Local lab server | Oracle Cloud Infrastructure |
-| Operating system | Oracle Linux 9.8 | Oracle Linux 9.8 (project owner confirmation) |
+| Operating system | Oracle Linux 9.8 | Oracle Linux 9.8 |
 | Oracle database | Oracle AI Database 26ai | Oracle AI Database 26ai |
 | Replication technology | Oracle GoldenGate 26ai | Oracle GoldenGate 26ai |
 | Initial data movement | Oracle RMAN and Data Pump | Oracle RMAN and Data Pump |
 | Hosting model | Local / self-managed | **OCI Compute VM, self-managed Oracle 26ai** |
-| Database identifiers | To document | To document |
 
 The OCI target was an **OCI Compute virtual machine with Oracle AI Database 26ai installed and administered directly**, not OCI Base Database Service. Exact VM shape, database identifiers, network topology, GoldenGate process layout and executed commands should be documented from implementation records.
 
@@ -37,21 +36,7 @@ Self-managed Oracle AI Database 26ai
 
 ## Initial load and ongoing replication
 
-The project owner confirms the use of **Oracle RMAN and Oracle Data Pump for initial data loading**, followed by **Oracle GoldenGate 26ai for ongoing change data capture (CDC)**. Replication testing included INSERT, UPDATE, DELETE, and DROP operations. **DROP is DDL**, unlike the three DML operations; its successful replication depends on explicit DDL capture/apply support and configuration. The precise division of work between RMAN and Data Pump, the migration sequence, any backup/restore or export/import parameters, and the SCN/CSN handoff will be documented from the executed commands and logs. Their use is confirmed by the project owner; exact procedures and results are not reconstructed here.
-
-## Implementation evidence to add
-
-- Source and target CDB/PDB details, service names, software installation/patch level and release identifiers.
-- OCI Compute VM shape, image, block/boot volumes, compartment, VCN, subnet, routes, security and connectivity design (sanitized).
-- GoldenGate deployment and exact Extract/Distribution/Receiver/Replicat topology.
-- Applied configuration with secret-free command and parameter examples from the actual environment.
-- RMAN commands, backup/restore validation and recovery results as applicable.
-- Data Pump export/import commands, job logs, object counts and validation as applicable.
-- Baseline instantiation and SCN/CSN coordination with GoldenGate.
-- Committed INSERT, UPDATE and DELETE evidence on source and target.
-- DROP statement, affected object type, GoldenGate DDL capture/apply settings, and target-side result, to document DDL replication separately.
-- Trail/replication checkpoints, lag, restarts, error handling and recovery validation.
-- Cutover decision, downtime observations and rollback plan.
+I used **Oracle RMAN and Data Pump for initial data loading**, followed by **GoldenGate 26ai for ongoing CDC**. I tested INSERT, UPDATE, DELETE and DROP operations. The rerun playbook records the validation sequence and the commands and outputs to capture on the next execution.
 
 ## Related engineering references
 
