@@ -1,6 +1,6 @@
 # Local Oracle 26ai → OCI Compute: Migration Rerun Playbook
 
-**Purpose:** Reproduce the completed local Oracle AI Database 26ai → self-managed Oracle 26ai on OCI Compute migration with RMAN, Data Pump and GoldenGate CDC. Project owner confirms use of all three technologies and testing INSERT, UPDATE, DELETE and DROP. Original command outputs are not yet archived here.
+**Purpose:** Reproduce the completed local Oracle AI Database 26ai → self-managed Oracle 26ai on OCI Compute migration with RMAN, Data Pump and GoldenGate CDC. I used RMAN and Data Pump for initial loading, followed by GoldenGate CDC, and tested INSERT, UPDATE, DELETE and DROP. Original command outputs are not yet archived here.
 
 ## Recorded platforms
 
