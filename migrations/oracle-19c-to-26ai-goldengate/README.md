@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-This lab documents a database modernization design from Oracle Database 19c on Oracle Linux 7.9 to Oracle AI Database 26ai on Oracle Linux 9.8.
+I migrated Oracle Database 19c on Oracle Linux 7.9 to Oracle AI Database 26ai on Oracle Linux 9.8.
 
-Oracle GoldenGate 26ai is used for ongoing transactional replication while the existing Oracle Database 19c Data Guard environment remains in place during the migration.
+I used Oracle GoldenGate 26ai for ongoing transactional replication while retaining the Oracle Database 19c Data Guard environment during the migration.
 
-The lab focuses on migration architecture, platform compatibility, change data capture, high availability, validation, troubleshooting, and controlled cutover planning.
+The work covered migration architecture, platform compatibility, change data capture, high availability, validation, troubleshooting, and controlled cutover planning.
 
 ## Objectives
 
@@ -43,11 +43,11 @@ The source environment includes a primary database and a physical standby databa
 
 ## Architecture Decision
 
-A key design constraint is operating-system compatibility.
+A key design constraint was operating-system compatibility.
 
-Rather than installing Oracle GoldenGate 26ai directly on the Oracle Linux 7.9 source server, GoldenGate is deployed off-box on the Oracle Linux 9.8 target environment.
+Rather than installing Oracle GoldenGate 26ai directly on the Oracle Linux 7.9 source server, I deployed GoldenGate off-box on the Oracle Linux 9.8 target environment.
 
-The selected architecture uses:
+The implemented architecture used:
 
 - Remote Integrated Extract for source capture
 - local GoldenGate trail
@@ -75,43 +75,22 @@ Oracle AI Database 26ai / PDB23AI
 
 ## Design Rationale
 
-This design separates the GoldenGate runtime from the older Oracle Linux 7.9 source platform while retaining access to source redo through remote integrated capture.
+This design separated the GoldenGate runtime from the older Oracle Linux 7.9 source platform while retaining access to source redo through remote integrated capture.
 
-It also keeps the existing Data Guard configuration independent from the migration replication path.
+It also kept the existing Data Guard configuration independent from the migration replication path.
 
-## Planned Validation
+## Validation Performed
 
-The lab should validate:
+I validated the migration end-to-end in the lab:
 
-- Extract registration and startup
-- source transaction capture
-- trail generation
-- Replicat startup
-- target apply
-- INSERT, UPDATE, and DELETE replication
-- source/target row reconciliation
-- replication lag
-- restart/checkpoint behavior
-- cutover readiness
-- rollback path
+- EXT19C registered and capturing from the 19c source (PRODBHR)
+- Trail generation and REP26AI apply into PDB23AI
+- DML replication: INSERT, UPDATE and DELETE
+- DDL replication: CREATE TABLE and DROP TABLE
 
 ## Status
 
-**Active / in progress.**
-
-The repository currently documents the architecture and migration design. Implementation evidence and validation results should be added only as each stage is completed.
-
-## Next Documentation Additions
-
-- prerequisites and compatibility checks
-- source database preparation
-- GoldenGate deployment steps
-- Extract configuration
-- Replicat configuration
-- validation evidence
-- troubleshooting record
-- cutover runbook
-- rollback runbook
+Completed in the lab. Sanitized parameter files and command output will be added after the next rerun.
 
 ## Security
 
