@@ -88,6 +88,10 @@ I validated the migration end-to-end in the lab:
 - DML replication: INSERT, UPDATE and DELETE
 - DDL replication: CREATE TABLE and DROP TABLE
 
+## Implementation history and engineering decisions
+
+I retained the existing Oracle 19c Data Guard environment and used GoldenGate 26ai from the newer Oracle Linux 9.8 environment to avoid installing the GoldenGate 26ai runtime on the Oracle Linux 7.9 source. My build and troubleshooting notes distinguish source preparation, remote Integrated Extract registration, local trail generation and Integrated Replicat apply from final DML/DDL validation. Earlier implementation checkpoints are not the final completion status.
+
 ## Status
 
 Completed in the lab. Sanitized parameter files and command output will be added after the next rerun.
