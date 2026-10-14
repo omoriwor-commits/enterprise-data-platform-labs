@@ -48,7 +48,7 @@ I used **Oracle RMAN and Data Pump for initial data loading**, followed by **Gol
 
 ## Implementation history and validation
 
-I completed this as the second stage of my three-migration lab path, using a self-managed Oracle 26ai database on OCI Compute. I used RMAN and Data Pump for initial data movement, then GoldenGate 26ai for ongoing replication with local source capture and remote target apply. I tested INSERT, UPDATE, DELETE and DROP operations. The exact per-tool load scope, Extract mode, trail positioning, and SCN/CSN boundary remain items to capture in sanitized rerun evidence; I do not treat those missing records as proof of unperformed work.
+I completed this as the second stage of my three-migration lab path, using a self-managed Oracle 26ai database on OCI Compute. I used RMAN and Data Pump for initial data movement, then GoldenGate 26ai for ongoing replication with local source capture and remote target apply. I tested INSERT, UPDATE, DELETE and DROP operations. The exact per-tool load scope, Extract mode, trail positioning, and SCN/CSN boundary remain items to capture in sanitized rerun evidence;
 
 ## Related engineering references
 
