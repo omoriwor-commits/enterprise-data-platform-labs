@@ -30,8 +30,8 @@ LOCAL LAB / ORACLE LINUX 9.8                 OCI COMPUTE / ORACLE LINUX 9.8
 |                                  |        | Self-managed database on OCI VM   |
 | GoldenGate 26ai source-side hub  |        |                                  |
 |  Extract: LOCAL capture          |        | Target reached by REMOTE apply   |
-|  Trail / CDC change stream       |------->| over approved private network    |
-|  Replicat: REMOTE target apply   |        |                                  |
+|  Trail / CDC change stream       |        | over approved private network    |
+|  Replicat: REMOTE target apply   |------->|                                  |
 +----------------------------------+        +----------------------------------+
            Initial load: RMAN / Data Pump (separate from CDC)
 ~~~
