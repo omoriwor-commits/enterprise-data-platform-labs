@@ -6,6 +6,7 @@ The repository is organized around practical migration, modernization, high-avai
 
 ## Current Lab Portfolio
 
+These are migrations 1 and 2 of a three-stage path; migration 3 (OCI → Azure SQL Server 2022) is in the enterprise-multicloud-database-platform-lab repository.
 ### Oracle 19c to Oracle AI Database 26ai Migration — remote capture / local apply
 
 [Open the migration lab](migrations/oracle-19c-to-26ai-goldengate/README.md)
@@ -38,7 +39,7 @@ GoldenGate source-side tier                   (self-managed target)
 Initial load: RMAN + Data Pump; CDC: GoldenGate 26ai
 ```
 
-The [OCI-to-Azure SQL Server 2022 project](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab) is a separate hub-based **remote capture / remote apply** implementation.
+The [OCI-to-Azure SQL Server 2022 project](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab) is migration 3: a hub-based **remote capture / remote apply** heterogeneous migration.
 
 ## Focus Areas
 
