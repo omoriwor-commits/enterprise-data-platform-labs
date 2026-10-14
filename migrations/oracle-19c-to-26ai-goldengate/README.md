@@ -1,4 +1,4 @@
-# Oracle Database 19c to Oracle AI Database 26ai Migration
+# Migration 1 — Oracle Database Upgrade, OS Migration & GoldenGate Replication
 
 ## Project Overview
 

@@ -1,4 +1,4 @@
-# Oracle 26ai to OCI Migration with GoldenGate 26ai
+# Migration 2 — Oracle On-Premises to OCI Cloud Migration & GoldenGate Replication
 
 **Project:** Oracle AI Database 26ai migration from a local Oracle Linux 9.8 lab environment to Oracle Cloud Infrastructure.
 
