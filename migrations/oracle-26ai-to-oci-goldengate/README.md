@@ -1,4 +1,4 @@
-# Migration 2 — Oracle On-Premises to OCI Cloud Migration & GoldenGate Replication
+# Migration 2 — Oracle 26ai On-Premises to OCI Migration & GoldenGate Replication
 
 **Project:** Oracle AI Database 26ai migration from a local Oracle Linux 9.8 lab environment to Oracle Cloud Infrastructure.
 
@@ -48,7 +48,7 @@ I used **Oracle RMAN and Data Pump for initial data loading**, followed by **Gol
 
 ## Implementation history and validation
 
-I completed this as the second stage of my three-migration lab path, using a self-managed Oracle 26ai database on OCI Compute. I used RMAN and Data Pump for initial data movement, then GoldenGate 26ai for ongoing replication with local source capture and remote target apply. I tested INSERT, UPDATE, DELETE and DROP operations. The exact per-tool load scope, Extract mode, trail positioning, and SCN/CSN boundary remain items to capture in sanitized rerun evidence;
+I completed this as the second stage of my three-migration lab path, using a self-managed Oracle 26ai database on OCI Compute. I used RMAN and Data Pump for initial data movement, then GoldenGate 26ai for ongoing replication with local source capture and remote target apply. I tested INSERT, UPDATE, DELETE and DROP operations. The exact per-tool load scope, Extract mode, trail positioning, and SCN/CSN boundary remain items to capture in sanitized rerun evidence.
 
 ## Related engineering references
 

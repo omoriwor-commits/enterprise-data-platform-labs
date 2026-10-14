@@ -7,7 +7,7 @@ The repository is organized around practical migration, modernization, high-avai
 ## Current Lab Portfolio
 
 These are migrations 1 and 2 of a three-stage path; migration 3 (OCI → Azure SQL Server 2022) is in the enterprise-multicloud-database-platform-lab repository.
-### Migration 1 — Oracle Database Upgrade, OS Migration & GoldenGate Replication — remote capture / local apply
+### Migration 1 — Oracle 19c → 26ai Upgrade, OS Migration & GoldenGate Replication
 
 [Open the migration lab](migrations/oracle-19c-to-26ai-goldengate/README.md)
 
@@ -26,7 +26,7 @@ Oracle AI Database 26ai / Oracle Linux 9.8
 
 The migration design keeps the existing Oracle 19c Data Guard environment in place while GoldenGate provides continuous change capture toward the 26ai target.
 
-### Migration 2 — Oracle On-Premises to OCI Cloud Migration & GoldenGate Replication — local capture / remote apply
+### Migration 2 — Oracle 26ai On-Premises to OCI Migration & GoldenGate Replication
 
 [Open the OCI migration](migrations/oracle-26ai-to-oci-goldengate/README.md)
 
