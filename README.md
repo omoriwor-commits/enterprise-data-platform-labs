@@ -2,11 +2,11 @@
 
 A focused portfolio repository for hands-on enterprise database and data-platform engineering work.
 
-The repository is organized around practical migration, modernization, high-availability, replication, cloud, security, reliability, and automation scenarios.
+It holds the first two stages of my three-stage Oracle migration path, both using GoldenGate 26ai.
 
 ## Current Lab Portfolio
 
-These are migrations 1 and 2 of a three-stage path; migration 3 (OCI → Azure SQL Server 2022) is in the enterprise-multicloud-database-platform-lab repository.
+These are migrations 1 and 2 of a three-stage path; migration 3 (OCI → Azure SQL Server 2022) is in the [enterprise-multicloud-database-platform-lab](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab) repository.
 
 ### Migration 1 — Oracle 19c → 26ai Upgrade, OS Migration & GoldenGate Replication
 
