@@ -56,6 +56,6 @@ Record actual dates, versions and commands. Do not publish data passwords, Oracl
 ## Related references
 
 - [Project architecture and recorded methods](README.md)
-- [GoldenGate 26ai Engineering Field Guide](https://github.com/omoriwor-commits/DovOps_T/blob/main/GoldenGate/manual/README.md)
-- [OCI VCN and SSH Engineering Guide](https://github.com/omoriwor-commits/DovOps_T/blob/main/OCI/engineering/README.md)
+- [GoldenGate 26ai Engineering Field Guide](https://github.com/omoriwor-commits/oracle-db-platform-automation/blob/main/GoldenGate/manual/README.md)
+- [OCI VCN and SSH Engineering Guide](https://github.com/omoriwor-commits/oracle-db-platform-automation/blob/main/OCI/engineering/README.md)
 - [Oracle GoldenGate 26ai core documentation](https://docs.oracle.com/en/database/goldengate/core/26/coredoc/index.html)
