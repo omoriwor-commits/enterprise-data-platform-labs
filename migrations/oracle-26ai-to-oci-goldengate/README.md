@@ -52,8 +52,8 @@ I completed this as the second stage of my three-migration lab path, using a sel
 
 ## Related engineering references
 
-- [OCI VCN, Public/Private Subnets, Internet and NAT Gateways](https://github.com/omoriwor-commits/DovOps_T/blob/main/OCI/engineering/01-vcn-public-private-subnets-internet-nat-gateways.md)
-- [GoldenGate Engineering Field Guide](https://github.com/omoriwor-commits/DovOps_T/blob/main/GoldenGate/manual/README.md)
+- [OCI VCN, Public/Private Subnets, Internet and NAT Gateways](https://github.com/omoriwor-commits/oracle-db-platform-automation/blob/main/OCI/engineering/01-vcn-public-private-subnets-internet-nat-gateways.md)
+- [GoldenGate Engineering Field Guide](https://github.com/omoriwor-commits/oracle-db-platform-automation/blob/main/GoldenGate/manual/README.md)
 
 ## Security
 
