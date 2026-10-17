@@ -1,6 +1,6 @@
 # Local Oracle 26ai → OCI Compute: Migration Rerun Playbook
 
-**Purpose:** Reproduce the completed local Oracle AI Database 26ai → self-managed Oracle 26ai on OCI Compute migration with RMAN, Data Pump and GoldenGate CDC. I used RMAN and Data Pump for initial loading, followed by GoldenGate CDC, and tested INSERT, UPDATE, DELETE and DROP. Original command outputs are not yet archived here.
+**Purpose:** Reproduce the completed local Oracle AI Database 26ai → self-managed Oracle 26ai on OCI Compute migration with RMAN, Data Pump and GoldenGate CDC. I used RMAN and Data Pump for initial loading, followed by GoldenGate CDC, and tested DML (INSERT, UPDATE, DELETE) and DDL (CREATE TABLE, DROP TABLE) replication to the target. Original command outputs are not yet archived here.
 
 ## Recorded platforms
 
@@ -20,7 +20,7 @@
 6. **Data Pump path:** Preserve actual expdp/impdp mode (FULL/SCHEMAS/TABLES/PDB), directory objects, dump/log location, compatible metadata and remap rules. Confirm imported row counts and failures. Data Pump and RMAN may have served different portions of the migration; do not treat both as interchangeable baseline methods.
 7. **CDC boundary:** Establish a consistent initial load and the exact supported Oracle GoldenGate instantiation/CSN boundary for every replicated object; document how RMAN/Data Pump snapshots align with capture and apply.
 8. **GoldenGate 26ai:** Record Microservices deployments, credential aliases (never wallet contents), Extract registration/parameters, source/destination trail paths, Distribution/Receiver routes, Replicat parameters and checkpoints. Rebuild from the release-specific docs and verified environment—not assumed old paths.
-9. **Test operations:** Execute uniquely keyed committed INSERT, UPDATE, DELETE in a disposable test schema. For DROP, first confirm supported Oracle DDL replication scope, filters and intended test object; verify target metadata and recreate the object as part of controlled teardown.
+9. **Test operations:** Execute uniquely keyed committed INSERT, UPDATE, DELETE in a disposable test schema. For DDL, confirm the Oracle DDL replication scope and filters, then run CREATE TABLE and DROP TABLE on a disposable test table and check the target data dictionary after each.
 10. **Operational acceptance:** Reconcile target rows and object definitions, verify checkpoint/lag and restart/catchup, collect error reports, document cutover/rollback and destroy temporary cloud resources when finished.
 
 ## Read-only Oracle inventory
@@ -48,7 +48,7 @@ SELECT current_scn FROM v$database;
 | Delivery | Distribution/Receiver config, trail routing and network checkpoints |
 | Apply | Replicat config/status, checkpoint and report |
 | DML | Before/after SQL on both databases for committed INSERT, UPDATE, DELETE |
-| DDL | Supported Oracle DDL settings, DROP statement and resulting target metadata |
+| DDL | Oracle DDL settings, CREATE TABLE and DROP TABLE statements, and the resulting target metadata |
 | Reliability | Replicat restart, lag trend, missing/duplicate row checks and rollback decision |
 
 Record actual dates, versions and commands. Do not publish data passwords, Oracle wallets, OCI API keys, private SSH keys, account identifiers or customer records.

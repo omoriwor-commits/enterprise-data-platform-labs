@@ -87,6 +87,7 @@ enterprise-data-platform-labs/
 
 ## Related Portfolio Repositories
 
+- [Oracle Database Platform Engineering](https://github.com/omoriwor-commits/oracle-db-platform-automation): portfolio hub, knowledge base and automation roadmap
 - [Enterprise Multi-Cloud Database Platform Lab](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab)
 - [Nginx DevOps Project](https://github.com/omoriwor-commits/nginx-devops-project)
 

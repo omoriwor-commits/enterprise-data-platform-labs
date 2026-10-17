@@ -96,6 +96,12 @@ I retained the existing Oracle 19c Data Guard environment and used GoldenGate 26
 
 Completed in the lab. Sanitized parameter files and command output will be added after the next rerun.
 
+## Related
+
+- [Migration 2: Oracle 26ai on-premises to OCI](../oracle-26ai-to-oci-goldengate/README.md)
+- [Migration 3: OCI Oracle 26ai to Azure SQL Server 2022](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab)
+- [Portfolio hub and automation roadmap](https://github.com/omoriwor-commits/oracle-db-platform-automation)
+
 ## Security
 
 Do not commit database passwords, wallet secrets, private SSH keys, cloud credentials, or production data.
