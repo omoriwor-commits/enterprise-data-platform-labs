@@ -6,18 +6,16 @@ I migrated Oracle Database 19c on Oracle Linux 7.9 to Oracle AI Database 26ai on
 
 I used Oracle GoldenGate 26ai for ongoing transactional replication while retaining the Oracle Database 19c Data Guard environment during the migration.
 
-The work covered migration architecture, platform compatibility, change data capture, high availability, validation, troubleshooting, and controlled cutover planning.
+The work covered migration architecture, platform compatibility, change data capture, validation and troubleshooting. I retained the existing source Data Guard environment; this record does not claim a tested cutover, rollback or HA failover.
 
 ## Objectives
 
 - Migrate from Oracle Database 19c to Oracle AI Database 26ai.
 - Move from Oracle Linux 7.9 to Oracle Linux 9.8.
 - Maintain the existing Oracle 19c Data Guard environment during migration.
-- Minimize application downtime.
 - Use a supported GoldenGate architecture.
 - Establish continuous change data capture between source and target.
 - Validate source-to-target transactional replication.
-- Define cutover and rollback considerations.
 
 ## Source Environment
 
