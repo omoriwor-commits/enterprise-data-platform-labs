@@ -91,3 +91,8 @@ enterprise-data-platform-labs/
 - [Enterprise Multi-Cloud Database Platform Lab](https://github.com/omoriwor-commits/enterprise-multicloud-database-platform-lab)
 - [Nginx DevOps Project](https://github.com/omoriwor-commits/nginx-devops-project)
 
+
+
+## Evidence and source checks
+
+Repository checks validate YAML, Python correctness and local Markdown file links, and scan Git history for credential patterns with Gitleaks. They do not run the migrations. Final sanitized configuration, baseline boundaries and source/target comparison artifacts remain tracked in the [cross-repository acceptance issue](https://github.com/omoriwor-commits/oracle-db-platform-automation/issues/24).
