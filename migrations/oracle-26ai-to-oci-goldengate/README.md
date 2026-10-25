@@ -30,7 +30,8 @@ LOCAL LAB / ORACLE LINUX 9.8                 OCI COMPUTE / ORACLE LINUX 9.8
 |                                  |        | Self-managed database on OCI VM   |
 | GoldenGate 26ai source-side hub  |        |                                  |
 |  Extract: LOCAL capture          |        | Target reached by REMOTE apply   |
-|  Trail / CDC change stream       |        | over approved private network    |
+|  Trail / CDC change stream       |        | over a private network path      |
+|                                  |        | (details recorded on rerun)      |
 |  Replicat: REMOTE target apply   |------->|                                  |
 +----------------------------------+        +----------------------------------+
            Initial load: RMAN / Data Pump (separate from CDC)
@@ -44,11 +45,11 @@ On the rerun, I will record the exact Extract mode, GoldenGate hub hostname, tra
 
 ## Initial load and ongoing replication
 
-I used **Oracle RMAN and Data Pump for initial data loading**, followed by **GoldenGate 26ai for ongoing CDC**. I tested DML (INSERT, UPDATE, DELETE) and DDL (CREATE TABLE, DROP TABLE) replication, and confirmed each change reached the OCI target. The rerun playbook records the validation sequence and the commands and outputs to capture on the next execution.
+I did the initial load as one sequence: RMAN moved the container database to OCI Compute under a new database name, then Data Pump loaded the pluggable databases, leaving two CDBs on the OCI host. GoldenGate 26ai then handled ongoing CDC. I tested DML (INSERT, UPDATE, DELETE) and DDL (CREATE TABLE, DROP TABLE) replication, and confirmed each change reached the OCI target. The rerun playbook records the validation sequence and the commands and outputs to capture on the next execution.
 
 ## Implementation history and validation
 
-I completed this as the second stage of my three-migration lab path, using a self-managed Oracle 26ai database on OCI Compute. I used RMAN and Data Pump for initial data movement, then GoldenGate 26ai for ongoing replication with local source capture and remote target apply. I tested DML (INSERT, UPDATE, DELETE) and DDL (CREATE TABLE, DROP TABLE) replication, and confirmed each change reached the OCI target. The exact per-tool load scope, Extract mode, trail positioning, and SCN/CSN boundary remain items to capture in sanitized rerun evidence.
+This was the second stage of my three-migration lab path. The Extract mode, trail positioning and SCN/CSN boundary will be recorded in sanitized evidence on the rerun.
 
 ## Related engineering references
 
